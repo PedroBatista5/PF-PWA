@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TextItem from "../components/text";
+import "../styles/mainpage.css"; // Importando os estilos
 
 const Home = () => {
   const [texts, setTexts] = useState([]);
@@ -9,23 +10,12 @@ const Home = () => {
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div className="main-container">
       <h1>Projeto React</h1>
-      <button
-        onClick={handleAddText}
-        style={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          cursor: "pointer",
-          backgroundColor: "#007BFF",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-        }}
-      >
+      <button className="generate-button" onClick={handleAddText}>
         Gerar
       </button>
-      <div style={{ marginTop: "20px" }}>
+      <div className="text-container">
         {texts.map((text, index) => (
           <TextItem key={index} text={text} />
         ))}
